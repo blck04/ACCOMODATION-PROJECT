@@ -1,0 +1,29 @@
+body {
+    display: grid;
+    place-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:transparent;
+    margin: 0;
+    padding: 0%;
+    height: 100%;
+}
+#about{
+  
+    background-color: #E5E7EB;
+    
+}
+.abt-statement{
+    margin-top: 20px;
+}
+#close{
+    width: auto;
+    background-color:white;
+    border: none;
+    font-weight: bolder;
+    cursor: pointer;
+   
+}
+.cls{
+    display: flex;
+    justify-content: flex-end;
+}

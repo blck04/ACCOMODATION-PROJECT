@@ -1,0 +1,113 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d6ca3;
+  margin: 0;
+  padding: 0%;
+  height: 100vh;
+}
+.dashboard {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+.greetings {
+  display: inline-block;
+}
+.text {
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-right: 3px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s, cursor 0.5s step-end infinite alternate;
+}
+/* cursor  blinking*/
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+/* typing effect*/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+.account-status {
+  margin-bottom: 20px;
+}
+.account-status li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.account-status li span {
+  font-weight: bold;
+}
+.notice-board {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e5e7eb;
+  border: 3px solid #f9c831;
+  border-radius: 10px;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+
+  justify-content: center;
+  background-color: #06527f;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: aqua;
+}
+
+.footer {
+  margin-top: 50px;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  background-color: #06527f;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    max-width: 280px;
+    font-size: small;
+  }
+  nav {
+    font-size: 10px;
+  }
+}
