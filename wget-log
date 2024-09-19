@@ -1,0 +1,13 @@
+--2024-09-18 17:55:57--  https://update.code.visualstudio.com/commit:38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.246.55, 2620:1ec:bdf::55
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.246.55|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://vscode.download.prss.microsoft.com/dbazure/download/stable/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/vscode-server-linux-x64.tar.gz [following]
+--2024-09-18 17:55:58--  https://vscode.download.prss.microsoft.com/dbazure/download/stable/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/vscode-server-linux-x64.tar.gz
+Resolving vscode.download.prss.microsoft.com (vscode.download.prss.microsoft.com)... 151.101.38.172, 2a04:4e42:9::684
+Connecting to vscode.download.prss.microsoft.com (vscode.download.prss.microsoft.com)|151.101.38.172|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 60061264 (57M) [application/octet-stream]
+Saving to: ‘/home/blck04/.vscode-server/bin/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40-1726674947.tar.gz’
+
+                                              /home/  63%[==========================================================================>                                           ]  36.57M  33.1KB/s    eta 4m 24s                                              /home/b  63%[==========================================================================>                                           ]  36.57M   682 B/s    eta 8m 51s 

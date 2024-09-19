@@ -80,11 +80,24 @@
                 <label for="id">ID Number</label>
                 <input type="text" name="id" id="id" required/>
             </div>
-            <button type="submit">Apply</button>
+            <button type="submit" onclick="showAlertAndLoadPage()" 
+            >Apply</button>
             <input type="checkbox">I Agree With <a href="" class="terms">Terms and Conditions</a>
             
         </form>
     </div>
     <div class="footer"> @Web Cadets. Inc</div>
 </body>
+<script>
+    function showAlertAndLoadPage() {
+  
+  alert("APPLICATION SUCCESSFUL, YOU WILL BE REDIRECTED TO LOGIN PAGE!");
+
+  
+  setTimeout(function() {
+   
+    window.location.href = "index.html"; 
+  }, 3000);
+}
+</script>
 </html>
