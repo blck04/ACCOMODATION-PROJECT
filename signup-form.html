@@ -14,7 +14,7 @@
     <div class="container">
        
         <h1 class="form-title">Fill In With Correct Details.</details></h1>
-        <form action="#" action="connect.php" method="post">
+        <form action="signup.php" method="post">
 
             <h1 class="personal-details">Personal Details</h1>
             <div class="form-group">
@@ -77,10 +77,11 @@
             </div>
 
             <div class="form-group">
-                <label for="id">ID Number</label>
-                <input type="text" name="id" id="id" required/>
+                <label for="guardian_id">ID Number</label>
+                <input type="text" name="guardian_id" id="guardian_id" required/>
             </div>
-            <button type="submit" onclick="showAlertAndLoadPage()" 
+            <!-- onclick="showAlertAndLoadPage()" -->
+            <button type="submit" name="btnSubmit" 
             >Apply</button>
             <input type="checkbox">I Agree With <a href="" class="terms">Terms and Conditions</a>
             
