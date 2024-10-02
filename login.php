@@ -1,45 +1,48 @@
 <?php
 
+require_once 'connect.php'; // Include database connection
 
-include 'connect.php'; 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $studentNumber = trim($_POST["student_number"]);
+    $idNumber = trim($_POST["id_number"]);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    
-    if (empty($username) || empty($password)) {
-        
-        echo "Please enter both username and password.";
+    // Validate input
+    if (empty($studentNumber) || empty($idNumber)) {
+        echo "Please enter both student number and ID number.";
     } else {
-        // Perform authentication using a secure hashing algorithm (e.g., bcrypt)
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Retrieve user information from the database
-        $query = "SELECT * FROM users WHERE username = ?";
+        // Prepare and execute the query
+        $query = "SELECT id_number FROM accepted WHERE student_number = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        
+        if ($stmt) {
+            $stmt->bind_param("s", $studentNumber);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $storedPassword = $row["password"];
+            // Check if a record was found
+            if ($result->num_rows === 1) {
+                $row = $result->fetch_assoc();
+                $storedIdNumber = $row["id_number"];
 
-            // Verify password using password_verify()
-            if (password_verify($password, $storedPassword)) {
-                // Authentication successful, redirect to dashboard or appropriate page
-                session_start(); // Start a session to store user data
-                $_SESSION["username"] = $username; // Store username in the session
-                header("Location:student-dash-board.html"); // Replace "dashboard.php" with your actual dashboard page
-                exit();
+                // Compare the entered ID number with the stored ID number
+                if ($idNumber === $storedIdNumber) {
+                    session_start();
+                    $_SESSION["student_id"] = $studentNumber; 
+                    header("Location: student-dash-board.html"); // Redirect to dashboard
+                    exit();
+                } else {
+                    echo "<script>alert('Incorrect student number or ID number.')</script>";
+                }
             } else {
-                // Incorrect password, display an error message
-                echo "Invalid username or password.";
+                echo "<script>alert('Invalid student number or ID number.')</script>";
             }
+            $stmt->close(); // Close the statement
         } else {
-            // User not found, display an error message
-            echo "Invalid username or password.";
+            echo "Database error: Unable to prepare statement.";
         }
     }
 }
+
+// Optional: Close the database connection
+$conn->close();
+?>
