@@ -67,14 +67,14 @@
             foreach ($student_array as $student) {
 
                 if($student['studentNumber'] == $accepted_student_number){ 
-                    $query = "SELECT * FROM accepted WHERE student_number = '$accepted_student_number'";
+                    $query = "SELECT * FROM dashboard WHERE student_number = '$accepted_student_number'";
                     $result = mysqli_query($conn, $query);
 
                     if(mysqli_num_rows($result) == 0) {
 
                         $accepted_name = $student['fullName'];
                         $accepter_id_number = $student['idNumber'];
-                        $query = "INSERT INTO accepted(full_name,student_number,id_number) VALUES ('$accepted_name', '$accepted_student_number','$accepter_id_number')";
+                        $query = "INSERT INTO dashboard(full_name,student_number,id_number) VALUES ('$accepted_name', '$accepted_student_number','$accepter_id_number')";
                         
                         if(mysqli_query($conn, $query)){
                             $counter++;
